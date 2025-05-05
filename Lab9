@@ -1,0 +1,19 @@
+import math
+
+def simple_iteration_method(x0, tol=1e-6, max_iter=100):
+    for i in range(max_iter):
+        x1 = math.exp(math.atan(x0))
+
+        if abs(x1 - x0) < tol:
+            return x1
+
+        x0 = x1
+
+    print("Maksimum iterasiya sayına çatıldı.")
+    return x0
+
+x0 = 3.5  # Interval [3.0, 4.0] içərisindən bir başlanğıc qiyməti
+
+root = simple_iteration_method(x0)
+
+print(f"Tənliyin kökü: {root}")
